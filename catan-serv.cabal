@@ -1,12 +1,12 @@
-name:                sasher
+name:                catan-serv
 version:             0.1.0.0
 synopsis:            Initial project template from stack
 description:         Please see README.md
-homepage:            http://github.com/githubuser/sasher#readme
+homepage:            http://github.com/hherman1/catan-serv#readme
 license:             BSD3
 license-file:        LICENSE
 author:              Author name here
-maintainer:          example@example.com
+maintainer:          hherman1@macalester.edu
 copyright:           2010 Author Here
 category:            Web
 build-type:          Simple
@@ -47,23 +47,23 @@ library
                         , cookie
   default-language:    Haskell2010
 
-executable sasher-exe
+executable catan-serv-exe
   hs-source-dirs:      app
   main-is:             Main.hs
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   build-depends:       base
-                     , sasher
+                     , catan-serv
   default-language:    Haskell2010
 
-test-suite sasher-test
+test-suite catan-serv-test
   type:                exitcode-stdio-1.0
   hs-source-dirs:      test
   main-is:             Spec.hs
   build-depends:       base
-                     , sasher
+                     , catan-serv
   ghc-options:         -threaded -rtsopts -with-rtsopts=-N
   default-language:    Haskell2010
 
 source-repository head
   type:     git
-  location: https://github.com/githubuser/sasher
+  location: https://github.com/hherman1/catan-serv
