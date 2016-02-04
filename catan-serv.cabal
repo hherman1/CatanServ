@@ -46,7 +46,6 @@ library
                         , bytestring
                         , bytestring-conversion
                         , cookie
-                        , grid
                         , containers
                         , random
   default-language:    Haskell2010

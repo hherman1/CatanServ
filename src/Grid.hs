@@ -59,3 +59,14 @@ hexHex s = [(x,y) | y <- [-s + 1 .. s-1],
                 [-s + 1 - y .. s - 1]
             else
                 [-s+1..s-1 - y]
+-- Hollow Hexagon
+ringHex :: Int -> [Hex]
+ringHex s = 
+       [(x,-s + 1)  | x <- [0..s-1]]
+    ++ [(x,s-1)     | x <- [-s + 1..0]]
+    ++ [(x,y)       | y <- [-s + 2 .. s-2], x <- f y]
+    where
+        f y = if y <= 0 then
+                [-s + 1 - y, s - 1]
+            else
+                [-s+1, s-1 - y]
