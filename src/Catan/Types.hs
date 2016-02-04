@@ -25,7 +25,8 @@ data Status = Accepted | Rejected | Pending
     deriving (Show,Eq,Generic)
 
 data TradeOffer = TradeOffer
-    { tradeoffer_sender     :: Player
+    { tradeoffer_id         :: ID
+    , tradeoffer_sender     :: Player
     , tradeoffer_receiver   :: Player
     , tradeoffer_offer      :: Resources
     , tradeoffer_request    :: Resources 
