@@ -8,7 +8,7 @@ Run `stack setup` anywhere
 
 Run `stack build` in the source directory
 
-To execute: `stack exec 
+To execute: `stack exec`
 
 
 -------------------------
