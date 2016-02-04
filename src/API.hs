@@ -15,7 +15,7 @@ import Types
 import Auth
 
 
-type API = RequestSession :<|> UserApi :<|> ItemApi :<|> LikeApi :<|> FollowApi
+type API = RequestSession :<|> UserApi 
 
 
 
@@ -37,30 +37,4 @@ type GetUser = WithAuth :> "get" :> Capture "uid" UID :> Get '[JSON] (Maybe User
 type DeleteUser = WithAuth :> "delete" :> Delete '[JSON] ()
 
 
-
-
-type ItemApi = CreateItem :<|> GetItem :<|> DeleteItem
-
-type CreateItem = WithAuth :> "items" :> "create" :> QueryParam "item" Item :> Post '[JSON] (Maybe String)
-
-type GetItem = WithAuth :> "items" :> "get" :> Capture "itemid" Int :> Get '[JSON] Item
-
-type DeleteItem = WithAuth :> "items" :> "delete" :> Capture "itemid" Int :> Delete '[JSON] (Maybe String)
-
-
-
-
-type LikeApi = CreateLike :<|> DeleteLike
-
-type CreateLike = WithAuth :> "items" :> "like" :> QueryParam "like" :> Post '[JSON] (Maybe String)
-
-type DeleteLike = WithAuth :> "items" :> "unlike" :> Capture "likeid" Int :> Delete '[JSON] (Maybe String)
-
-
-type FollowApi = CreateFollow :<|> DeleteFollow
-
-type CreateFollow = WithAuth :> "users" :> "follow" :> QueryParam "follow" Follow :> Post '[JSON] (Maybe String)
-
-type DeleteFollow = WithAuth :> "users" :> "unfollow" :> Capture "followid" Int :> Delete '[JSON] (Maybe String)
-	:<|> "users" :> "unfollow" :> Capture "followerid" Int :> Capture "userid" Int :> Delete '[JSON] (Maybe String)
 

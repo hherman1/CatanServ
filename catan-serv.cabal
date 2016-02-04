@@ -25,6 +25,8 @@ library
                         , Sql.Init
                         , Types
                         , Catan
+                        , Catan.PersistentTypes
+                        , Catan.Types
                         , Test
   build-depends:        base >= 4.7 && < 5
                         , aeson
@@ -48,6 +50,7 @@ library
                         , cookie
                         , containers
                         , random
+                        , binary
   default-language:    Haskell2010
 
 executable catan-serv-exe

@@ -1,24 +1,11 @@
 module Catan where
 import Data.Map (Map, fromList)
 import System.Random
+import Types
+import Catan.Types
 
 import Grid
 
-type Owned a = (ID,a)
-
-data Resource = Wheat | Flock | Lumber | IronOre | Bricks
-
-data Building = House | City
-    deriving (Show, Eq)
-type Road = ()
-data Tile = Tile Bool Int Terrain
-    deriving (Show, Eq)
-data Terrain = Grain | Sheep | Wood | Iron | Brick | Desert | Sea
-    deriving (Show, Eq, Enum)
-
-type Board = ( Map Vertex (Owned Building)
-             , Map Edge (Owned Road)
-             , Map Hex Tile)
 
 -- random gen in range of dice rolls
 -- Will not generate desert or sea tiles
